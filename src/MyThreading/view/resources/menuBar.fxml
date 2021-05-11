@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyThreading.view.resources.controllers.MenuBarController">
+   <children>
+      <MenuBar AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Table">
+            <items>
+                  <MenuItem fx:id="tableStartBtn" mnemonicParsing="false" onAction="#startLoadingTable" text="Load Data" />
+                  <MenuItem fx:id="tableStopBtn" mnemonicParsing="false" onAction="#stopLoadingTable" text="Stop Loading" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="tableClearBtn" mnemonicParsing="false" onAction="#clearTable" text="Clear Table" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Area Chart">
+            <items>
+              <MenuItem fx:id="areaLoadStart" mnemonicParsing="false" onAction="#startLoadingArea" text="Load Data" />
+                  <MenuItem fx:id="areaLoadStop" mnemonicParsing="false" onAction="#stopLoadingArea" text="Stop Loading" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="areaClear" mnemonicParsing="false" onAction="#clearArea" text="Clear Data" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#noHelpHere" text="No Help Here" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
