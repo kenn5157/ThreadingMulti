@@ -1,10 +1,14 @@
 package MyThreading.view.resources.controllers;
 
+import MyThreading.MainApp;
 import MyThreading.logic.View;
 import javafx.fxml.*;
 import MyThreading.logic.TableData;
 import javafx.event.ActionEvent;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -15,6 +19,8 @@ public class MenuBarController {
     @FXML private MenuItem tableStopBtn;
     @FXML private MenuItem tableClearBtn;
 
+    private Scene rootScene;
+
     private TableData tableData;
     private View view;
 
@@ -22,6 +28,7 @@ public class MenuBarController {
     private boolean isLoading = false;
 
     public void initialize(){
+        view = new View();
         clearUI();
     }
 
@@ -74,17 +81,8 @@ public class MenuBarController {
     }
 
     public void noHelpHere(ActionEvent actionEvent) {
-        ButtonType b1 = new ButtonType("I'm completely blind");
-        ButtonType b2 = new ButtonType("I don't know how to follow directions");
+        Scene scene = view.getPrimaryScene();
+        scene.getRoot().setRotate(180);
 
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-
-        alert.setTitle("Blind?");
-        alert.setHeaderText("");
-        alert.setContentText("Can't you read? There is no help here. \r\n Please answer the question!");
-
-        alert.getButtonTypes().addAll(b1,b2);
-
-        alert.show();
     }
 }
